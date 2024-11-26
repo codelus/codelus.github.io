@@ -9,11 +9,36 @@
             margin: 0;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            background: linear-gradient(
+                -45deg,
+                #1a1a1a,
+                #000000,
+                #1f1f1f,
+                #000000
+            );
+            background-size: 400% 400%;
+            animation-name: gradient;
+            animation-duration: 15s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
             color: #fff;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         h1 {
@@ -21,9 +46,28 @@
             text-align: center;
             color: #fff;
         }
+
+        footer {
+            position: fixed;
+            bottom: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <h1>We build stuff.</h1>
+    <footer>
+        <a href="mailto:info@codelus.xyz">info@codelus.xyz</a>
+    </footer>
 </body>
 </html>
